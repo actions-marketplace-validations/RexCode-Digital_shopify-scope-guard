@@ -77,12 +77,12 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: RexCode-Digital/shopify-scope-guard@26448b66cc314d66bd6529918a88d97dfbc387c3 # v0.2.3
+      - uses: RexCode-Digital/shopify-scope-guard@30d08c644114399c0ee0257954205b97fb9fcbd3 # v0.2.4
         with:
           fail-on: high
 ```
 
-For high-assurance workflows, pin third-party Actions to reviewed immutable commit SHAs. `v0.2.1` identifies the current patch release; use a resolved SHA for immutable execution.
+For high-assurance workflows, pin third-party Actions to reviewed immutable commit SHAs. `v0.2.4` identifies the current patch release; use a resolved SHA for immutable execution.
 
 See the [GitHub Action guide](docs/github-action.md).
 
@@ -251,10 +251,10 @@ MIT — see [LICENSE](LICENSE).
 
 ## Immutable SHA usage
 
-The Action example pins the reviewed v0.2.1 release commit. Verify the release reference with:
+The Action example pins the reviewed v0.2.4 release commit. Verify the release reference with:
 
 ```bash
-gh api repos/RexCode-Digital/shopify-scope-guard/git/ref/tags/v0.2.3 --jq .object.sha
+git fetch --tags origin && git rev-parse 'v0.2.4^{commit}'
 ```
 
 Published patch tags are retained; existing minor aliases are movable. A reviewed full commit SHA is the immutable execution reference.
