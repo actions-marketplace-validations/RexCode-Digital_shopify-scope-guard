@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 0.4.0
+
+- Add offline scope evidence for classic `products/update` and `orders/create` subscriptions in `shopify.app.toml`, with separate EVIDENCED, NOT EVIDENCED, and UNKNOWN results from Shopify Events.
+- Expose classic webhook evidence counts in human, JSON, SARIF, and GitHub Action outputs without including destinations or filter values.
+- Upgrade GraphQL.js to 17.0.2.
+- Breaking: require Node.js 22 or newer for the CLI; Node.js 20 is no longer supported. The Action remains on Node.js 24; CI tests Node.js 22 and 24 plus the required Node.js 20 check.
+- Map `write_marketplace_orders` to its implied marketplace read scope for `orders/create`, while preserving UNKNOWN results and optional-scope uncertainty.
+- Correct the standalone GraphQL document support note and refresh the immutable Action example to the v0.3.0 commit.
+
 ## 0.3.0
 
 - Classify Admin, Storefront, Customer Account, and ambiguous GraphQL operations independently using nearby source context.
